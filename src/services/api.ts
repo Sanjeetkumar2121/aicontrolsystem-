@@ -4,7 +4,7 @@ import { getMockFeeds, getMockAlerts, getMockMetrics, getMockKeywords, getMockSe
 
 // Create axios instance
 export const apiClient: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3001/api',
+  baseURL: (import.meta.env as any).VITE_API_URL || 'http://localhost:3001/api',
   timeout: 10000,
 })
 

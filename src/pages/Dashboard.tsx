@@ -4,7 +4,6 @@ import { MetricCards } from '../components/dashboard/MetricCards'
 import { LiveFeed } from '../components/dashboard/LiveFeed'
 import { SentimentChart } from '../components/dashboard/SentimentChart'
 import { TrendChart } from '../components/dashboard/TrendChart'
-import { LoadingSpinner } from '../components/common/LoadingSpinner'
 import { useData } from '../context/DataContext'
 
 export const Dashboard: React.FC = () => {

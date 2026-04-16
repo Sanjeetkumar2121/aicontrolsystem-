@@ -1,7 +1,7 @@
 import React from 'react'
 import { Layout } from '../components/layout/Layout'
 import { LoadingSpinner } from '../components/common/LoadingSpinner'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, ScatterChart, Scatter } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { useData } from '../context/DataContext'
 
 export const Analytics: React.FC = () => {
