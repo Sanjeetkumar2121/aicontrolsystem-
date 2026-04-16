@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  textarea,
+  select {
+    @apply bg-background-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-foreground-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+
+  button {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-accent hover:bg-accent-hover text-white rounded-lg font-medium transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-background-secondary hover:bg-background-tertiary text-foreground border border-border rounded-lg font-medium transition-colors;
+  }
+
+  .card {
+    @apply bg-background-secondary border border-border rounded-lg p-4;
+  }
+
+  .metric-card {
+    @apply bg-background-secondary border border-border rounded-lg p-6 hover:border-accent-light transition-colors;
+  }
+
+  .table-row {
+    @apply border-b border-border hover:bg-background-tertiary transition-colors;
+  }
+
+  .input-focus {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-150;
+}
