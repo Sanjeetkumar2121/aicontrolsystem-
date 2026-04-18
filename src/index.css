@@ -5,6 +5,8 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   input[type='text'],
@@ -12,7 +14,7 @@
   input[type='password'],
   textarea,
   select {
-    @apply bg-background-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-foreground-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+    @apply bg-background-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-foreground-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all;
   }
 
   button {
@@ -22,7 +24,7 @@
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 bg-accent hover:bg-accent-hover text-white rounded-lg font-medium transition-colors;
+    @apply px-4 py-2 bg-accent hover:bg-accent-hover text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-accent/25;
   }
 
   .btn-secondary {
@@ -30,11 +32,11 @@
   }
 
   .card {
-    @apply bg-background-secondary border border-border rounded-lg p-4;
+    @apply bg-background-secondary border border-border rounded-xl p-5;
   }
 
   .metric-card {
-    @apply bg-background-secondary border border-border rounded-lg p-6 hover:border-accent-light transition-colors;
+    @apply bg-background-secondary border border-border rounded-xl p-5 hover:border-accent/50 transition-all duration-200;
   }
 
   .table-row {
@@ -46,10 +48,10 @@
   }
 }
 
-/* Scrollbar styles */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -58,14 +60,42 @@
 
 ::-webkit-scrollbar-thumb {
   background: #475569;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
 
-/* Smooth transitions */
-* {
-  @apply transition-colors duration-150;
+/* Subtle animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Glow effects for status indicators */
+.glow-success {
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.glow-error {
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+.glow-warning {
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.glow-accent {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
 }
